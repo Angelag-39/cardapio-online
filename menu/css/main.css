@@ -46,6 +46,11 @@ a.navbar-brand {
     font-size:  20px;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
+
+.btn-white.active,.btn-white:hover {
+background-color: var(--color-primary);
+}
+
 .btn-icon {
     padding-right: 75px;
 }
@@ -150,4 +155,45 @@ margin-bottom: 60px;
     color:var(--color-primary);
     right: 20px;
     bottom: 10px;
+}
+.serviços {
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+.hint-title{
+    color: var(--color-primary);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.title {
+    color: var(--color-black);
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.card-icon {
+height: 150px;
+margin: 0 auto;
+margin-bottom: 30px;
+display: flex;
+justify-content: center;
+}
+.card-text {
+    color:var(--color-text-out);
+    font-size: 15px;
+    padding: 0px 30px;
+
+}
+.card-text p {
+    font-size: 22px;
+    color:var(--color-black);
+    padding-bottom: 10px;
+}
+.background-servicos {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background-image: url(../img/bg-icons-2.png);
 }
