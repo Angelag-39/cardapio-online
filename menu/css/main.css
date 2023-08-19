@@ -47,7 +47,7 @@ a.navbar-brand {
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
-.btn-white.active,.btn-white:hover {
+.btn-white .active, .btn-white:hover {
 background-color: var(--color-primary);
 }
 
@@ -196,4 +196,30 @@ justify-content: center;
     right: 0;
     height: 500px;
     background-image: url(../img/bg-icons-2.png);
+}
+.container-menu {
+    margin-bottom: 40px;
+}
+.cardapio {
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+.card-item {
+    height: 360px;
+}
+.card-item .img-produto img{
+    width: 100%;
+    border-radius: 11px;
+}
+.card-item .title-produto {
+   color :var(--color-black) ;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   height: 40px;
+   margin-bottom: 0px;
+
+}
+.card-item .price-produto {
+    color: var(--color-primary);
+    font-size: 24px;
 }
