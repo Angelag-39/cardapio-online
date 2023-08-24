@@ -17,7 +17,7 @@
     --color-red:#e74c3c;
     --color-green:#2ecc71;
     --color-separate:#cccccc;
-
+    --color-black-heavy:#000;
 }
 html, body {
     font-family: 'PoppinsRegular','Rubik',sans-serif;
@@ -47,7 +47,7 @@ a.navbar-brand {
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
-.btn-white .active, .btn-white:hover {
+.btn-white .btn-white:hover {
 background-color: var(--color-primary);
 }
 
@@ -204,6 +204,14 @@ justify-content: center;
     padding-top: 50px;
     padding-bottom: 150px;
 }
+.cardapio .background-cardapio {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background-image: url(../img/bg-icons-1.png);
+
+}
 .card-item {
     height: 360px;
 }
@@ -213,7 +221,7 @@ justify-content: center;
 }
 .card-item .title-produto {
    color :var(--color-black) ;
-   text-overflow: ellipsis;
+   text-overflow: ellipsis;/*3 puntos */
    white-space: nowrap;
    height: 40px;
    margin-bottom: 0px;
@@ -222,4 +230,58 @@ justify-content: center;
 .card-item .price-produto {
     color: var(--color-primary);
     font-size: 24px;
+}
+.card-item .add-carrinho {
+    display: none;
+    text-align: center;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.btn-menos {
+    color: var(--color-black-heavy);
+    padding: 5px 7px;
+    border:2px solid var(--color-black-heavy) ;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn-mais {
+    color: var(--color-black-heavy);
+    padding: 5px 7px;
+    border:2px solid var(--color-black-heavy) ;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.add-numero-itens {
+    color: var(--color-black-heavy);
+    padding: 2px 15px ;
+    border-top: 2px solid var(--color-black-heavy);
+    border-bottom: 2px solid var(--color-black-heavy);
+    font-size: 18px;
+}
+.btn-add {
+    border: 2px solid var(--color-black-heavy) ;
+    font-size: 16px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    color: var(--color-white);
+    background-color: var(--color-black-heavy);
+    margin-left: 15px;
+}
+.card-item:hover  {
+    background-color: var(--color-primary);
+}
+.card-item:hover .title-produto{
+    display:none;
+}
+.card-item:hover .add-carrinho {
+    display:flex;
+}
+.card-item:hover .price-produto {
+    color: var(--color-black-heavy) !important;
+    margin-top: 20px;
 }
