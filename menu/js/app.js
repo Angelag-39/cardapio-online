@@ -123,7 +123,7 @@ cardapio.metodos = {
         }
     },
 
-    // atualiza o badge de torais dos botoes "Meu carrinho"
+    // atualiza o badge de todos os botoes "Meu carrinho"
     atualizarBadgeTotal:() => {
 
         var total = 0;
@@ -210,11 +210,11 @@ cardapio.metodos = {
         }
     },
 
-    //botao de voltar etapa
+    //botão de voltar etapa
     voltarEtapa: () => {
 
         let etapa =$(".etapa.active").length;
-        cardapio.metodos.carregarEtapa(etapa - 1)
+        cardapio.metodos.carregarEtapa(etapa - 1);
     },
 
 
@@ -225,14 +225,20 @@ cardapio.metodos = {
         if(MEU_CARRINHO.length > 0) {
 
         $("#itensCarrinho").html('');
+
         $.each(MEU_CARRINHO,(i,e)=>{
             let temp = cardapio.templates.itemCarrinho.replace(/\${img}/g,e.img)
-            .replace(/\${nome}/g,e.name) 
+            .replace(/\${nome}/g, e.name) 
             .replace(/\${preco}/g, e.price.toFixed(2).replace('.' , ','))
             .replace(/\${id}/g,e.id) 
             .replace(/\${qntd}/g,e.qntd) 
 
             $("#itensCarrinho").append(temp);
+              // último item
+              if ((i + 1) == MEU_CARRINHO.length) {
+                cardapio.metodos.carregarValores();
+            }
+
         })
 
         }
@@ -242,19 +248,43 @@ cardapio.metodos = {
 
         }
     },
-
+// diminiur quantidade do item no carrinho
     diminuirQuantidadeCarrinho :(id) => {
+        let qntdAtual = parseInt($("#qntd-carrinho-" + id).text());
 
+        if (qntdAtual > 1) {
+            $("#qntd-carrinho-" + id).text(qntdAtual - 1);
+            cardapio.metodos.atualizarCarrinho(id,qntdAtual - 1);
+
+        }
+        else{
+            cardapio.metodos.removerItemCarrinho(id)
+        }
     },
-
+// aumentar quantidade do item no carrinho
     aumentarQuantidadeCarrinho : (id) => {
-
+        let qntdAtual = parseInt($("#qntd-carrinho-" + id).text());
+        $("#qntd-carrinho-" + id).text(qntdAtual + 1);
+        cardapio.metodos.atualizarCarrinho(id,qntdAtual + 1);
     },
-
+//botao remover itens do carrinho
     removerItemCarrinho :(id) => {
+        MEU_CARRINHO = $.grep(MEU_CARRINHO,(e,i) => {return e.id != id});
+        cardapio.metodos.carregarCarrinho();
 
+       //atualiza o botao carrinho com a quantidade actual
+       cardapio.metodos.atualizarBadgeTotal();
     },
 
+    //atualiza o carrinho  com a quantidade atual
+    atualizarCarrinho:(id,qntd) =>{
+
+        let objIndex =MEU_CARRINHO.findIndex((obj =>obj.id == id));
+        MEU_CARRINHO[objIndex].qntd = qntd;
+
+        //atualiza o botao carrinho com a quantidade actual
+        cardapio.metodos.atualizarBadgeTotal();
+},
 
 
 

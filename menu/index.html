@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-
+r">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -46,7 +47,7 @@
                                     <a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a>
                                 </li>
                             </ul>
-                            <a class="btn btn-white btn-icon">
+                            <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
                                 Meu carrinho <span class="icon">
                                     <div class=" container-total-carrinho badge-total-carrinho hidden">0</div>
                                     <i class="fa fa-shopping-bag"></i>
@@ -75,7 +76,7 @@
                                     <span class="icon-left">
                                         <i class="fa fa-phone"></i>
                                     </span>
-                                    (19) 99965-4351
+                                    (11) 986565453
                                 </a>
                             </div>
                         </div>
@@ -167,7 +168,7 @@
                         </h1>
                     </div>
                     <div class="col-12 container-menu">
-                            <a id="menu-burgers" class="btn btn-white btn-sm mr-3 active" onclick="cardapio.metodos.obterItensCardapio('burguers')">
+                            <a id="menu-burgers" class="btn btn-white btn-sm mr-3 active" onclick="cardapio.metodos.obterItensCardapio('burgers')">
                                 <i class="fas fa-hamburger"></i>&nbsp; Burgers
                             </a>
                             <a id="menu-pizzas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('pizzas')">
@@ -368,7 +369,8 @@
 
             <div class="m-header">
                 <div class="container">
-                    <a class="btn btn-white btn-sm float-right" >
+                    <a class="btn btn-white btn-sm float-right"
+                    onclick="cardapio.metodos.abrirCarrinho(false)" >
                         Fechar
                     </a>
                     <div class="etapas">
@@ -385,11 +387,11 @@
             <div class="m-body">
                 <div class="container">
 
-                    <div id="itensCarrinho" class="row mr-0 ml-0 animated fadeIn hidden">
+                    <div id="itensCarrinho" class="row mr-0 ml-0  hidden">
 
                     </div>
 
-                    <div id="localEntrega" class="row mr-0 ml-0 animated fadeIn hidden">
+                    <div id="localEntrega" class="row mr-0 ml-0  hidden">
 
                         <div class="col-12 col-lg-4 col-md-4 col-sm-12">
                             <div class="form-group container-cep">
@@ -476,7 +478,7 @@
 
                     </div>
 
-                    <div id="resumoCarrinho" class="row mr-0 ml-0 animated fadeIn hidden">
+                    <div id="resumoCarrinho" class="row mr-0 ml-0 hidden">
                         <div class="col-12">
                             <p class="title-carrinho mt-4">
                                 <b>Itens do pedido:</b>
@@ -529,10 +531,10 @@
                         </p>
                     </div>
 
-                    <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">
+                    <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right" id="btnEtapaPedido">
                         Continuar
                     </a>
-                    <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+                    <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
                         Revisar pedido
                     </a>
                     <a href="#" class="btn btn-yellow float-right hidden" id="btnEtapaResumo" target="_blank">

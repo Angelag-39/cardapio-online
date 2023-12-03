@@ -38,7 +38,7 @@ b {
 }
 
 .color-primary {
-    color: var(--color-primary);
+    color:var(--color-primary);
 }
 
 a.navbar-brand {
@@ -52,7 +52,7 @@ a.navbar-brand {
 }
 
 .btn-white {
-    background-color: var(--color-white);
+    background-color:var(--color-white);
     color: var(--color-black)!important;
     border-radius: 20px;
     padding: 15px 25px;
@@ -62,7 +62,7 @@ a.navbar-brand {
 
 .btn-white .btn-white:hover {
     background-color: var(--color-primary);
-    }
+}
 
 .btn-icon {
     padding-right: 75px;
@@ -750,4 +750,20 @@ footer {
 .toast.green {
     background-color: var(--color-green);
 }
-
+.carrinho-vazio {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+.carrinho-vazio i {
+width: 50px;
+height: 50px;
+background-color:var(--color-secondary) ;
+color: var(--color-primary);
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0 auto;
+border-radius: 50px;
+margin-bottom: 10px;
+}
