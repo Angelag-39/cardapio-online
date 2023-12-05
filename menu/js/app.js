@@ -3,9 +3,10 @@ $(document).ready(function (){
 })
 var cardapio = {};
 
-var MEU_CARRINHO =[];
+var MEU_CARRINHO = [];
 
-
+var VALOR_CARRINHO = 0;
+var VALOR_ENTREGA = 5;
 
 cardapio.eventos = {
 
@@ -234,12 +235,15 @@ cardapio.metodos = {
             .replace(/\${qntd}/g,e.qntd) 
 
             $("#itensCarrinho").append(temp);
-              // último item
-              if ((i + 1) == MEU_CARRINHO.length) {
-                cardapio.metodos.carregarValores();
-            }
 
-        })
+            //ultimo item
+          if ((i + 1) == MEU_CARRINHO.length){
+                cardapio.metodos.carregarValores();
+          }
+
+            })
+
+        
 
         }
         else {
@@ -272,20 +276,44 @@ cardapio.metodos = {
         MEU_CARRINHO = $.grep(MEU_CARRINHO,(e,i) => {return e.id != id});
         cardapio.metodos.carregarCarrinho();
 
-       //atualiza o botao carrinho com a quantidade actual
-       cardapio.metodos.atualizarBadgeTotal();
+   //atualiza o botao carrinho com a quantidade actual
+   cardapio.metodos.atualizarBadgeTotal();
+      
     },
 
     //atualiza o carrinho  com a quantidade atual
     atualizarCarrinho:(id,qntd) =>{
 
-        let objIndex =MEU_CARRINHO.findIndex((obj =>obj.id == id));
+        let objIndex = MEU_CARRINHO.findIndex((obj =>obj.id == id));
         MEU_CARRINHO[objIndex].qntd = qntd;
 
         //atualiza o botao carrinho com a quantidade actual
         cardapio.metodos.atualizarBadgeTotal();
+
+        //atualiza os valores(R$) totais do carrinho
+        cardapio.metodos.carregarValores();
 },
 
+//carrega os valores sub total
+carregarValores:()=>{
+
+    VALOR_CARRINHO = 0;
+
+    $("#lblSubTotal").text('R$ 0,00');
+    $("#lblValorEntrega").text('+ R$ 0,00');
+    $("#lblValorTotal").text('R$ 0,00');
+
+    $.each(MEU_CARRINHO,(i,e)=> {
+
+        VALOR_CARRINHO += parseFloat(e.price * e.qntd);
+
+        if((i + 1) == MEU_CARRINHO.length){
+            $("#lblSubTotal").text(`R$ ${VALOR_CARRINHO.toFixed(2).replace('.',',')}`);
+            $("#lblValorEntrega").text(`R$ ${VALOR_ENTREGA.toFixed(2).replace('.',',')}`);
+            $("#lblValorTotal").text(`R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.',',')}`);
+        }
+    })
+},
 
 
 
