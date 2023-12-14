@@ -397,7 +397,7 @@ r">
                             <div class="form-group container-cep">
                                 <label>CEP:</label>
                                 <input id="txtCEP" type="text" class="form-control" />
-                                <a class="btn btn-yellow btn-sm">
+                                <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()">
                                     <i class="fa fa-search"></i>
                                 </a>
                             </div>
@@ -443,7 +443,7 @@ r">
                         <div class="col-12 col-lg-2 col-md-2 col-sm-12">
                             <div class="form-group">
                                 <label>UF:</label>
-                                <select id="ddlUf" class="form-control">
+                                <select id="ddlUf" class="form-select">
                                     <option value="-1">...</option>
                                     <option value="AC">AC</option>
                                     <option value="AL">AL</option>
@@ -531,13 +531,13 @@ r">
                         </p>
                     </div>
 
-                    <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right" id="btnEtapaPedido">
+                    <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">
                         Continuar
                     </a>
-                    <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+                    <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
                         Revisar pedido
                     </a>
-                    <a href="#" class="btn btn-yellow float-right hidden" id="btnEtapaResumo" target="_blank">
+                    <a href="#" class="btn btn-yellow float-right hidden" id="btnEtapaResumo" target="_blank" >
                         Enviar pedido
                     </a>
 

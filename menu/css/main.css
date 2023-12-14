@@ -230,6 +230,7 @@ a.navbar-brand {
 
 .container-menu {
     margin-bottom: 40px;
+    text-overflow: ellipsis;
 }
 .cardapio {
     padding-top: 50px;
@@ -243,9 +244,10 @@ a.navbar-brand {
     background-image: url(../img/bg-icons-1.png);
 }
 
-
 .card-item {
     height: 360px;
+    text-align: center;
+    text-overflow: ellipsis;
 }
 
 .card-item .img-produto img {
