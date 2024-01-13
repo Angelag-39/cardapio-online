@@ -24,7 +24,7 @@ r">
         <section  class="header">
             <div class="container">
                     <nav class="navbar navbar-expand-lg pl-0 pr-0">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand wow flip" href="#">
                             <img src="./img/logo.png"  width="160" class="img-logo"/>
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse">
@@ -84,10 +84,10 @@ r">
                             <a href="https://www.instagram.com/angeladanielaguacaran/?igshid=YTQwZjQ0NmI0OA%3D%3D" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a class="btn btn-sm btn-white btn-social mt-4 mr-3">
+                            <a href="https://pt-br.facebook.com/" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a class="btn btn-sm btn-white btn-social mt-4 mr-3">
+                            <a href="https://wa.me" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
@@ -113,7 +113,7 @@ r">
             <div class="background-servicos"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center mb-5">
+                    <div class="col-12 text-center mb-5 wow flip">
                         <span class="hint-title"> <b>Serviços</b></span>
                         <h1 class="title">
                             <b>Como são nossos serviços?</b>
@@ -292,9 +292,9 @@ r">
                         </p>
                     </div>
                     </div>
-                    <a class="btn btn-sm btn-white btn-social mr-3 active">1</a>
-                    <a class="btn btn-sm btn-white btn-social mr-3">2</a>
-                    <a class="btn btn-sm btn-white btn-social">3</a>
+                    <a id="btnDepoimento-1" class="btn btn-sm btn-white btn-social mr-3 active" onclick="cardapio.metodos.abrirDepoimento(1)">1</a>
+                    <a id="btnDepoimento-2" class="btn btn-sm btn-white btn-social mr-3"  onclick="cardapio.metodos.abrirDepoimento(2)">2</a>
+                    <a id="btnDepoimento-3"  class="btn btn-sm btn-white btn-social"  onclick="cardapio.metodos.abrirDepoimento(3)">3</a>
                     
                 </div>
                 </div>
@@ -555,7 +555,10 @@ r">
             <script type="text/javascript" src="./js/modernizr-3.5.0.min.js"> </script>
             <script type="text/javascript" src="./js/bootstrap.min.js"> </script>
             <script type="text/javascript" src="./js/popper.min.js"> </script>
+            <script type="text/javascript" src="./js/wow.min.js"></script>
             <script type="text/javascript" src="./js/dados.js"></script>
             <script type="text/javascript" src="./js/app.js"></script>
+
+            <script>new WOW().init();</script>
         </body>
     </html>
